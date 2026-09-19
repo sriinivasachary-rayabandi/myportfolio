@@ -26,7 +26,7 @@
   --on-founder: #0f2a33;
 
   /* Type */
-  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-display: "Roboto Condensed", "Segoe UI", system-ui, -apple-system, sans-serif;
   --font-body: "Public Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
 
   /* Layout */
@@ -193,7 +193,8 @@ a:hover { color: var(--teal-deep); }
 @media (prefers-color-scheme: dark) { .brand__mark { color: #0c1a1f; } }
 
 .site-nav { display: flex; align-items: center; gap: 28px; }
-.site-nav ul { display: flex; gap: 22px; }
+.site-nav ul { display: flex; gap: 20px; }
+.brand__name, .btn--small { white-space: nowrap; }
 .site-nav li a:not(.btn) {
   color: var(--slate);
   font-size: 0.925rem;
@@ -207,7 +208,7 @@ a:hover { color: var(--teal-deep); }
 
 .nav-toggle { display: none; }
 
-@media (max-width: 960px) {
+@media (max-width: 1060px) {
   .brand__name { font-size: 0.95rem; }
 
   .nav-toggle {
@@ -274,7 +275,7 @@ a:hover { color: var(--teal-deep); }
 
 .hero__name {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 500;
   font-size: clamp(2.4rem, 6.2vw, 4.6rem);
   line-height: 0.98;
   letter-spacing: -0.035em;
@@ -474,6 +475,25 @@ a:hover { color: var(--teal-deep); }
 .prose { max-width: 68ch; }
 .prose p { font-size: 1.075rem; line-height: 1.75; }
 .prose p + p { margin-top: 1.2em; }
+
+
+/* ---------- 10-second resume ---------- */
+
+.section--snapshot { padding-block: clamp(40px, 6vw, 72px); border-top: 1px solid var(--line); }
+.snap { border-top: 3px solid var(--ink); }
+.snap > div {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  gap: 4px 24px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+.snap dt { font-weight: 700; color: var(--teal); }
+.snap dd { font-size: 1.05rem; line-height: 1.5; }
+
+@media (max-width: 560px) {
+  .snap > div { grid-template-columns: 1fr; }
+}
 
 /* ---------- Results ledger ---------- */
 
